@@ -47,7 +47,7 @@ class CRD(Base):
             )
         except ApiException as e:
             if e.status == 404:
-                raise Exception(f"Blockdevice {namespace}/{name} not found", level='ERROR')
+                raise Exception(f"Blockdevice {namespace}/{name} not found")
             raise Exception(f"Failed to get blockdevice: {e}")
 
     def provision_longhorn_storage(self, name, engine_version, namespace):
